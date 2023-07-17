@@ -1,9 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
-using i64 = long long;
-
 struct segtree {
         int sz;
         vector < i64 > sums;
@@ -61,31 +55,3 @@ struct segtree {
                 return get(l , r , 0 , 0 , sz);
         }
 };
-
-int32_t main() {
-        ios::sync_with_stdio(false);
-        cin.tie(nullptr);
-        int n , m;
-        cin >> n >> m;
-        segtree st;
-        st.init(n);
-        vector < int > a(n);
-        for (int i = 0; i < n; ++i) {
-                cin >> a[i];
-        }
-        st.build(a);
-        while (m--){
-                int op;
-                cin >> op;
-                if(op == 1){ // set a[i] = v
-                        int i , v;
-                        cin >> i >> v;
-                        st.update(i , v);
-                }else{ // get sum of the segment [l , r[
-                        int l , r;
-                        cin >> l >> r;
-                        cout << st.get(l , r) << '\n';
-                }
-        }
-        return 0;
-}
