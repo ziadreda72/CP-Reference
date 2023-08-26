@@ -1,4 +1,4 @@
-vector < int > color(n + 1 , -1);
+        vector < int > color(n + 1 , -1);
         bool is_bipartite = true;
         queue < int > q;
         for(int i = 1 ; i <= n ; ++i){
